@@ -4,13 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - HelpingHandsWebApp</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HelpingHandsWebApp.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <!--NavBar-->
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-0 ml-auto">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HelpingHandsWebApp</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -28,8 +30,97 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>*@
+
+        <div class="sidebar" id="mySidebar">
+            <div class="logo-details">
+                <!--THIS WHERE YOU INSERT AN ICON -->
+
+                <h3 style="margin-left:30px; ">
+                    Gadget Store</h3>
+                    <!--<span class="logo_name" >Gadget Store</span>-->
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#" class="active">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-box'></i>
+                        <span class="links_name">View Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Purchase Requets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-coin-stack'></i>
+                        <span class="links_name">Suppliers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-book-alt'></i>
+                        <span class="links_name">Update Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-user'></i>
+                        <span class="links_name">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Generate Reports</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-cog'></i>
+                        <span class="links_name">Profile</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="#">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name">
+                            <form action="code.php" method="POST">
+                                <button type="submit" name="logout_btn" style="border: none; background-color: transparent; font-size: 18px; font-weight: 500; color: #fff;">Logout</button>
+                            </form>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section" id="home-section">
+            <nav>
+                <div class="sidebar-button" onclick="openNav()">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard">Welcome back!</span>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Search...">
+                    <i class='bx bx-search'></i>
+                </div>
+                <div class="profile-details">
+                    <p>fgdgf jgfg</p>
+                </div>
+            </nav>
+
+
+        
+
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
